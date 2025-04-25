@@ -21,7 +21,7 @@ Welcome to my personal portfolio website! This project showcases my skills, achi
 - **Backend**: Node.js, Spring Boot (for some projects)
 - **Libraries**: AOS (Animate On Scroll), Typed.js, Owl Carousel
 - **APIs**: Web3Forms for contact form submissions
-- **Hosting**: Deployed on [GitHub Pages](https://pages.github.com/)
+- **Hosting**: Deployed on [GitHub Pages](https://bikashkumaryadav.github.io/)
 
 ---
 
