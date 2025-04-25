@@ -1,0 +1,46 @@
+
+
+/* 404 Section */
+.page_404 {
+  padding: 60px 0;
+  background: #ffffff;
+  text-align: center;
+}
+
+.page_404 .wrapper {
+  background-image: url('https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif');
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+}
+
+.page_404 h1 {
+  font-size: 80px;
+  font-weight: bold;
+  color: #0077B5;
+  
+}
+
+.page_404 .msg h3 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+}
+
+.page_404 .msg p {
+  font-size: 16px;
+  color: #666;
+}
+
+.page_404 .backbtn .btn {
+  background: #0077B5;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.page_404 .backbtn .btn:hover {
+  background: #37b3ed;
+}
