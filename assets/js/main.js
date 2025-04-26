@@ -228,6 +228,57 @@ var typed = new Typed(".typing-text", {
 
 })(jQuery);
 
+
+// Captch implementation
+
+document.getElementById("contact-form").addEventListener("submit", async function (event) {
+  event.preventDefault(); // Prevent default form submission
+
+  const form = event.target;
+  const submitButton = document.getElementById("submit-button");
+
+  // Disable the submit button to prevent multiple submissions
+  submitButton.disabled = true;
+  submitButton.textContent = "Submitting...";
+
+  // Get the hCaptcha response token
+  const hCaptchaResponse = document.querySelector('[name="h-captcha-response"]').value;
+
+  if (!hCaptchaResponse) {
+    alert("Please complete the hCaptcha challenge.");
+    submitButton.disabled = false;
+    submitButton.textContent = "Send Message";
+    return;
+  }
+
+  // Prepare form data
+  const formData = new FormData(form);
+  formData.append("h-captcha-response", hCaptchaResponse);
+
+  try {
+    // Send form data to Web3Forms
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: formData,
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      // Redirect to the thank you page
+      window.location.href = form.querySelector('input[name="redirect"]').value;
+    } else {
+      alert("There was an error submitting the form. Please try again.");
+    }
+  } catch (error) {
+    console.error("Error submitting the form:", error);
+    alert("An unexpected error occurred. Please try again later.");
+  } finally {
+    // Re-enable the submit button
+    submitButton.disabled = false;
+    submitButton.textContent = "Send Message";
+  }
+});
 // Contact form validation
 document.getElementById("contact-form").addEventListener("submit", function (e) {
   const name = document.getElementById("name");
@@ -255,6 +306,9 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
     return;
   }
 
-  // If all validations pass
-  alert("Form submitted successfully!");
 });
+
+
+
+
+

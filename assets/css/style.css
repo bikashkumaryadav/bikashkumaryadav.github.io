@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 # Back to top button
 --------------------------------------------------------------*/
 .back-to-top  {
-  left: calc(100% - 4%) ;
+  left: calc(100% - 55px);
   right: auto;
 }
 
@@ -785,6 +785,9 @@ button.show-all:hover {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
 .contact {
   padding-bottom: 130px;
 }
@@ -799,65 +802,33 @@ button.show-all:hover {
 .contact .info i {
   font-size: 20px;
   color: #fff;
-  float: left;
   width: 44px;
   height: 44px;
   background: #0077B5;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50px;
+  border-radius: 50%;
   transition: all 0.3s ease-in-out;
 }
 
 .address, .email, .phone {
   display: flex;
-  align-items: center; /* Align icon and text vertically */
-  gap: 10px; /* Add spacing between the icon and the text */
-  margin-bottom: 15px; /* Add spacing between each row */
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
 .address i, .email i, .phone i {
-  font-size: 24px; /* Adjust icon size */
-  color: #0077B5; /* Icon color */
+  font-size: 24px;
+  color: #0077B5;
 }
 
 .address h3, .email h3, .phone h3 {
-  margin: 0; /* Remove default margin from h3 */
-  font-size: 18px; /* Adjust text size */
-  color: #333; /* Text color */
+  margin: 0;
+  font-size: 18px;
+  color: #333;
 }
-.contact .info h4 {
-  padding: 0 0 0 60px;
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 5px;
-  color: #050d18;
-}
-
-.contact .info p {
-  padding: 0 0 10px 60px;
-  margin-bottom: 0px;
-  font-size: 14px;
-  color: #173b6c;
-}
-
-.contact .info .email p {
-  padding-top: 0;
-}
-
-.contact .info .social-links {
-  padding-left: 60px;
-}
-
-.contact .info .address, 
-.contact .info .email, 
-.contact .info .phone {
-  display: flex;
-  align-items: center; /* Align icon and text vertically */
-  gap: 10px; /* Add spacing between the icon and the text */
-}
-
 
 .contact .info .social-links a {
   font-size: 18px;
@@ -884,6 +855,9 @@ button.show-all:hover {
   color: #fff;
 }
 
+/*--------------------------------------------------------------
+# Contact Form
+--------------------------------------------------------------*/
 .contact .email-form {
   width: 100%;
   padding: 30px;
@@ -892,13 +866,14 @@ button.show-all:hover {
 }
 
 .contact .email-form .form-group {
-  padding-bottom: 8px;
+  margin-bottom: 20px;
 }
 
 .contact .email-form input, .contact .email-form textarea {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
+  border: 1px solid #0073aa;
 }
 
 .contact .email-form input {
@@ -907,12 +882,56 @@ button.show-all:hover {
 
 .contact .email-form textarea {
   padding: 10px 12px;
+  resize: none;
 }
 
-.captcha-new {
-  margin-bottom: 10px;
+.contact .email-form input:focus, .contact .email-form textarea:focus {
+  border-color: #005f8c;
+  box-shadow: none;
 }
 
+/* Input Group */
+.contact .input-group {
+  display: flex;
+  align-items: center;
+}
+
+.contact .input-group-prepend {
+  background-color: #0073aa;
+  border: 1px solid #0073aa;
+  border-radius: 5px 0 0 5px;
+  padding: 7px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.contact .input-group-text {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Submit Button */
+.contact .btn-primary {
+  background-color: #0073aa;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.contact .btn-primary:hover {
+  background-color: #005f8c;
+  color: #fff;
+}
+
+/* Submit Button Animation */
 .contact .email-form button[type="submit"] {
   background: #0077B5;
   border: 0;
@@ -926,6 +945,7 @@ button.show-all:hover {
   background: #37b3ed;
 }
 
+/* Loading Animation */
 @-webkit-keyframes animate-loading {
   0% {
     transform: rotate(0deg);
@@ -943,6 +963,38 @@ button.show-all:hover {
     transform: rotate(360deg);
   }
 }
+
+/* Align the icon with the textarea */
+.input-group-prepend {
+  display: flex;
+  align-items: center; /* Vertically center the icon */
+}
+
+.input-group-text {
+  display: flex;
+  align-items: center; /* Center the icon inside the span */
+  justify-content: center;
+  background-color: #0073aa; /* Optional: Add background color */
+  color: #fff; /* Optional: Icon color */
+  border: 1px solid #0073aa; /* Optional: Border color */
+  border-radius: 5px 0 0 5px; /* Rounded corners on the left */
+}
+
+textarea.form-control {
+  resize: none; /* Disable resizing if needed */
+  border-radius: 0 5px 5px 0; /* Rounded corners on the right */
+}
+/* Center the hCaptcha widget */
+.contact .form-group .h-captcha {
+  display: flex;
+  justify-content: center; /* Horizontally center the hCaptcha */
+  align-items: center; /* Vertically align the hCaptcha */
+  margin: 15px 0; /* Add spacing above and below the hCaptcha */
+}
+
+
+
+
 
 /*--------------------------------------------------------------
 # Breadcrumbs
@@ -1234,7 +1286,77 @@ background: #37b3ed;
   scrollbar-color: #0077B5 #f1f1f1; /* Thumb color and track color */
 }
 
+/* Contact Form Styles */
+.contact .form-group {
+  margin-bottom: 20px;
+}
 
+.contact .input-group {
+  display: flex;
+  align-items: center;
+}
+
+.contact .input-group-prepend {
+  background-color: #0073aa;
+  border: 1px solid #0073aa;
+  border-radius: 5px 0 0 5px;
+  padding: 7px;
+  color: #fff;
+}
+
+.contact .input-group-text {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+.contact .form-control {
+  border: 1px solid #0073aa;
+  border-radius: 0 5px 5px 0;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.contact .form-control:focus {
+  border-color: #005f8c;
+  box-shadow: none;
+}
+
+.contact .btn-primary {
+  background-color: #0073aa;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.contact .btn-primary:hover {
+  background-color: #005f8c;
+  color: #fff;
+}
+
+/* Align the icon with the textarea */
+.input-group-prepend {
+  display: flex;
+  align-items: center; /* Vertically center the icon */
+}
+
+.input-group-text {
+  display: flex;
+  align-items: center; /* Center the icon inside the span */
+  justify-content: center;
+  background-color: #0073aa; /* Optional: Add background color */
+  color: #fff; /* Optional: Icon color */
+  border: 1px solid #0073aa; /* Optional: Border color */
+  border-radius: 5px 0 0 5px; /* Rounded corners on the left */
+}
+
+textarea.form-control {
+  resize: none; /* Disable resizing if needed */
+  border-radius: 0 5px 5px 0; /* Rounded corners on the right */
+}
 
 
 

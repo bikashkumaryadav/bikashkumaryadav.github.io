@@ -17,7 +17,7 @@
 <meta property="og:title" content="Bikash Kumar Yadav" />
 <meta property="og:description" content="Portfolio of Bikash Kumar Yadav, showcasing skills in web development, backend engineering, and competitive programming." />
 <meta property="og:image" content="./assets/img/BKY-Profile.jpg" />
-<meta property="og:url" content="https://your-portfolio-url.com/" />
+<meta property="og:url" content="https://bikashkumaryadav.github.io/" />
 <meta property="og:type" content="website" />
 
   <!-- Favicons -->
@@ -40,15 +40,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HEC9Z70SZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <link href="assets/css/404.css" rel="stylesheet">
+  
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+ 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-06TLVQHZN1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    gtag('config', 'G-1HEC9Z70SZ');
-  </script>
+  gtag('config', 'G-06TLVQHZN1');
+</script>
+
+
+  
 
 </head>
 <body>
@@ -106,11 +113,6 @@
       </center>
       <h3>HIRE <span>ME</span></br> <span class="typing-text"></span></h3>
       
-         <!--  <div class="buttons" > 
-        <a href="#yad@gmail.com" class="btn"><span>Hire Me</span></a>
-        <a href="./assets/cv/CV- Bikash Kumar Yadav.pdf" class="btn" target="_blank"><span> Resume </span><i class="fas fa-download"></i></a>
-       </div>
-        -->
     </div>
     </section>
   <!-- End Home -->
@@ -837,32 +839,44 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            
-
+           
               <form action="https://api.web3forms.com/submit" method="POST" class="email-form" id="contact-form">
               <input type="hidden" name="access_key" value="f5ac9fda-6420-49d5-82a7-3cca45673e78">
+              <input type="hidden" name="captcha" value="true" />
+              <input type="hidden" name="subject" value="New message from my portfolio website">
+              <input type="hidden" name="redirect" value="https://bikashkumaryadav.github.io/thankyou.html">
             
               <!-- Name Field -->
-              <div class="form-group">
-                <label for="name">Your Name:</label>
-                <input class="form-control" type="text" name="name" id="name" required minlength="3" maxlength="100" pattern="[A-Za-z\s]+" title="Name should only contain letters and spaces." />
+              <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                <input class="form-control" type="text" name="name" id="name" required minlength="3" maxlength="100" pattern="[A-Za-z\s]+" title="Name should only contain letters and spaces." placeholder="Your Name" />
               </div>
             
               <!-- Email Field -->
-              <div class="form-group">
-                <label for="email">Your Email:</label>
-                <input class="form-control" type="email" name="email" id="email" required title="Please enter a valid email address." />
+              <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                </div>
+                <input class="form-control" type="email" name="email" id="email" required title="Please enter a valid email address." placeholder="Your Email" />
               </div>
             
               <!-- Message Field -->
-              <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea class="form-control" name="message" rows="8" id="message" required minlength="10" maxlength="2000" title="Message should be between 10 and 2000 characters."></textarea>
+              <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" style="padding: 79px 12px 79px 12px;"><i class="fas fa-comment"></i></span>
+                </div>
+                <textarea class="form-control" name="message" rows="8" id="message" required minlength="10" maxlength="2000" title="Message should be between 10 and 2000 characters." placeholder="Your Message"></textarea>
               </div>
-            
+               <!-- hCaptcha -->
+           <div class="form-group">
+            <div class="h-captcha" data-sitekey="4014d1c6-0da8-406c-ac74-6c68cc9a7b92"></div>
+           </div>
               <!-- Submit Button -->
+               
               <div class="text-center">
-                <button type="submit" id="submit-button">Send Message</button>
+                <button type="submit" id="submit-button" class="btn btn-primary">Send Message</button>
               </div>
             </form>
           </div>
@@ -872,9 +886,11 @@
       </div>
     </section><!-- End Contact Section -->
 
+
   </main><!-- End #main -->
   
 
+  
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
@@ -911,10 +927,9 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
    <script src="./assets/js/script.js"></script>
+ 
 
-  <
-
-  <!--Bikash Kumar Yadav Portfolio Website template-->
+<!--Bikash Kumar Yadav Portfolio Website template-->
 
 </body>
 
