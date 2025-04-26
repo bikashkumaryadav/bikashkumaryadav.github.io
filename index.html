@@ -41,9 +41,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/404.css" rel="stylesheet">
-  
-  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
- 
+   
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-06TLVQHZN1"></script>
 <script>
@@ -53,10 +51,6 @@
 
   gtag('config', 'G-06TLVQHZN1');
 </script>
-
-
-  
-
 </head>
 <body>
 
@@ -842,9 +836,9 @@
            
               <form action="https://api.web3forms.com/submit" method="POST" class="email-form" id="contact-form">
               <input type="hidden" name="access_key" value="f5ac9fda-6420-49d5-82a7-3cca45673e78">
-              <input type="hidden" name="captcha" value="true" />
               <input type="hidden" name="subject" value="New message from my portfolio website">
               <input type="hidden" name="redirect" value="https://bikashkumaryadav.github.io/thankyou.html">
+             <!-- <input type="hidden" name="from_name" value="bikashkumaryadav.github.io"> -->
             
               <!-- Name Field -->
               <div class="form-group input-group">
@@ -871,7 +865,7 @@
               </div>
                <!-- hCaptcha -->
            <div class="form-group">
-            <div class="h-captcha" data-sitekey="4014d1c6-0da8-406c-ac74-6c68cc9a7b92"></div>
+            <div class="h-captcha" data-captcha="true"></div>
            </div>
               <!-- Submit Button -->
                
@@ -927,7 +921,8 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
    <script src="./assets/js/script.js"></script>
- 
+   <! -- Step 2: Add the Web3Forms script -->
+  <script src="https://web3forms.com/client/script.js" async defer></script>
 
 <!--Bikash Kumar Yadav Portfolio Website template-->
 

@@ -228,84 +228,42 @@ var typed = new Typed(".typing-text", {
 
 })(jQuery);
 
+// Form Validation and hCaptcha Integration
+document.getElementById("contact-form").addEventListener("submit", async function (e) {
+  e.preventDefault(); // Prevent default form submission
 
-// Captch implementation
-
-document.getElementById("contact-form").addEventListener("submit", async function (event) {
-  event.preventDefault(); // Prevent default form submission
-
-  const form = event.target;
-  const submitButton = document.getElementById("submit-button");
-
-  // Disable the submit button to prevent multiple submissions
-  submitButton.disabled = true;
-  submitButton.textContent = "Submitting...";
-
-  // Get the hCaptcha response token
-  const hCaptchaResponse = document.querySelector('[name="h-captcha-response"]').value;
-
-  if (!hCaptchaResponse) {
-    alert("Please complete the hCaptcha challenge.");
-    submitButton.disabled = false;
-    submitButton.textContent = "Send Message";
-    return;
-  }
-
-  // Prepare form data
-  const formData = new FormData(form);
-  formData.append("h-captcha-response", hCaptchaResponse);
-
-  try {
-    // Send form data to Web3Forms
-    const response = await fetch(form.action, {
-      method: "POST",
-      body: formData,
-    });
-
-    const result = await response.json();
-
-    if (result.success) {
-      // Redirect to the thank you page
-      window.location.href = form.querySelector('input[name="redirect"]').value;
-    } else {
-      alert("There was an error submitting the form. Please try again.");
-    }
-  } catch (error) {
-    console.error("Error submitting the form:", error);
-    alert("An unexpected error occurred. Please try again later.");
-  } finally {
-    // Re-enable the submit button
-    submitButton.disabled = false;
-    submitButton.textContent = "Send Message";
-  }
-});
-// Contact form validation
-document.getElementById("contact-form").addEventListener("submit", function (e) {
   const name = document.getElementById("name");
   const email = document.getElementById("email");
   const message = document.getElementById("message");
+  const hCaptchaResponse = document.querySelector('[name="h-captcha-response"]');
 
   // Name Validation
   if (!/^[A-Za-z\s]+$/.test(name.value)) {
     alert("Name should only contain letters and spaces.");
-    e.preventDefault();
     return;
   }
 
   // Email Validation
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
     alert("Please enter a valid email address.");
-    e.preventDefault();
     return;
   }
 
   // Message Validation
   if (message.value.length < 10 || message.value.length > 2000) {
     alert("Message should be between 10 and 2000 characters.");
-    e.preventDefault();
     return;
   }
 
+  // hCaptcha Validation
+  if (!hCaptchaResponse || !hCaptchaResponse.value) {
+    alert("Please complete the hCaptcha challenge.");
+    return;
+  }
+
+  // If all validations pass
+  alert("Captcha validated successfully! Your message has been sent.");
+  this.submit(); // Submit the form
 });
 
 
