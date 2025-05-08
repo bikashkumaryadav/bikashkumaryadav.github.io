@@ -262,7 +262,7 @@ document.getElementById("contact-form").addEventListener("submit", async functio
   }
 
   // If all validations pass
-  alert("Captcha validated successfully! Your message has been sent.");
+  alert("Your message has been successfully sent. I’ll get back to you soon.");
   this.submit(); // Submit the form
 });
 
